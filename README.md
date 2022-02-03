@@ -49,3 +49,7 @@ After a lot of trial and error, these resistor values were chosen to maximise th
 |           137           |  1 |  1 |  1 |  1 |
 
 Using this button multiplexing, only six signal cables are needed to connect the external controller: three for all the buttons, one ground, one +5V, and one signal line. The signal line is connected to ground inside the controller such that the processor knows when the external controller is plugged in.
+
+## Image generator
+
+Instead of manually editing an array of 128 bytes to create images, a python program was written to make life easier. The program uses Tkinter to create a simple UI. The program displays a grid of 32x32 cells which can be turned on/off individually by clicking on them. Other buttons allow the content of the display to be moved around, cleared, and exported into an array of 64 doubles which can be copied into the images.h file of the Arduino code. 

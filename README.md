@@ -22,7 +22,7 @@ When multiplexing, each row of LED's is turned on separately. This is done at a 
 
 ### Controller
 
-To play Snake and Pong, an external controller is needed to allow for more functionality. The external controller has 10 buttons and the side panel has four plus a rotating knob. Connecting these buttons in the conventional way, 15 pins would have to be used. The cable connecting the external controller would also have to house 12 separate cables (10 for the buttons, one ground, and one signal to detect if the controller is plugged in). Because this kind of cable is not readily available, button multiplexing was used. Button multiplexing differs from LED multiplexing in that specific valued resistors are used to create an analog voltage signal depending on the which buttons are pressed. The image below shows a diagram for multiplexing four buttons.
+To play Snake and Pong, an external controller is needed to allow for more functionality. The external controller has 10 buttons and the side panel has four plus a rotating knob. Connecting these buttons in the conventional way, 15 pins would have to be used. The cable connecting the external controller would also have to house 12 separate cables (10 for the buttons, one ground, and one signal line to detect if the controller is plugged in). Because this kind of cable is not readily available, button multiplexing was used. Button multiplexing differs from LED multiplexing in that specific valued resistors are used to create an analog voltage signal depending on the which buttons are pressed. The image below shows a diagram for multiplexing four buttons.
 
 <img src="./Images/button_multiplexing_darkmode.png#gh-dark-mode-only" width="700">
 <img src="./Images/button_multiplexing_lightmode.png#gh-light-mode-only" width="700">
@@ -48,3 +48,4 @@ After a lot of trial and error, these resistor values were chosen to maximise th
 |           132           |  1 |  1 |  1 |  0 |
 |           137           |  1 |  1 |  1 |  1 |
 
+Using this button multiplexing, only six signal cables are needed to connect the external controller: three for all the buttons, one ground, one +5V, and one signal line. The signal line is connected to ground inside the controller such that the processor knows when the external controller is plugged in.

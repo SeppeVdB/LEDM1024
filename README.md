@@ -81,6 +81,8 @@ To create a grid like pattern on the screen, a grid was 3d printed and inserted 
 
 A diffusive acrylic plate is used as the front plate to create a pixel look.
 
+<img src="./Images/Side_view.jpg" width="500">
+
 <img src="./Images/LEDM1024_turned_on.jpg" width="500">
 
 I'm sorry for the picture quality, but it is very difficult to capture the screen on camera. In reality the pixels are perfectly square.

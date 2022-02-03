@@ -85,7 +85,7 @@ class Window(Frame):
         self.init_window()
 
     def init_window(self):
-        self.master.title('LED Matrix')
+        self.master.title('LEDM 1024')
         self.pack(fill=BOTH, expand=1)
 
         frame_1 = Frame(root)

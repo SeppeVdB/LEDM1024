@@ -14,7 +14,7 @@ To play Snake, the external controller is needed. The highscore is displayed on 
 
 To play Pong, the external controller and two players are needed. One player uses the leftmost up and down buttons and the second player uses the rightmost up and down buttons on the controller. Again, the knob on the side panel can be used to change the frame rate.
 
-## Technical details
+## Electronics
 
 ### Processor
 
@@ -59,3 +59,7 @@ Using this button multiplexing, only six signal cables are needed to connect the
 Instead of manually editing an array of 128 bytes to create images, a python program was written to make life easier. The program uses Tkinter to create a simple UI. The program displays a grid of 32x32 cells which can be turned on/off individually by clicking on them. Other buttons allow the content of the display to be moved around, cleared, and exported into an array of 64 doubles which can be copied into the images.h file of the Arduino code.
 
 <img src="./Images/UI_screenshot.png" width="500">
+
+
+## Design
+

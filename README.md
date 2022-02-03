@@ -24,7 +24,7 @@ When multiplexing, each row of LED's is turned on separately. This is done at a 
 
 To play Snake and Pong, an external controller is needed to allow for more functionality. The external controller has 10 buttons and the side panel has four plus a rotating knob. Connecting these buttons in the conventional way, 15 pins would have to be used. The cable connecting the external controller would also have to house 12 separate cables (10 for the buttons, one ground, and one signal to detect if the controller is plugged in). Because this kind of cable is not readily available, button multiplexing was used. Button multiplexing differs from LED multiplexing in that specific valued resistors are used to create an analog voltage signal depending on the which buttons are pressed. The image below shows a diagram for multiplexing four buttons.
 
-![plot](./Images/button-multiplexing.png)
+![image](./Images/button_multiplexing.png)
 
 After a lot of trial and error, these resistor values were chosen to maximise the voltage difference between different button pressed configurations. All the possible values are stored in a look up table. The values are ordered in ascending order, which has to convenient result that the binary represenation of the value position in the list corresponds to which buttons are pressed.
 

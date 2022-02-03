@@ -26,7 +26,7 @@ To play Snake and Pong, an external controller is needed to allow for more funct
 
 ![circuit diagram](./Images/button_multiplexing_lightmode.png#gh-light-mode-only)
 ![circuit diagram](./Images/button_multiplexing_darkmode.png#gh-dark-mode-only)
-<img src="./Images/button_multiplexing_darkmode.png#gh-dark-mode-only" width="100">
+<img src="./Images/button_multiplexing_darkmode.png#gh-dark-mode-only" width="500">
 
 After a lot of trial and error, these resistor values were chosen to maximise the voltage difference between different button pressed configurations. All the possible values are stored in a look up table. The values are ordered in ascending order, which has to convenient result that the binary represenation of the value position in the list corresponds to which buttons are pressed.
 

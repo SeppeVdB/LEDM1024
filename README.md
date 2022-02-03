@@ -14,6 +14,35 @@ To play Snake, the external controller is needed. The highscore is displayed on 
 
 To play Pong, the external controller and two players are needed. One player uses the leftmost up and down buttons and the second player uses the rightmost up and down buttons on the controller. Again, the knob on the side panel can be used to change the frame rate.
 
+
+
+## Design
+
+The casing is built around plywood sheet where all the LED's are mounted into. This sheet has a grid of 32x32 holes drilled and all the LED's are gluid in place. The LED leads are soldered to rails of copper wire to connect them in a grid like pattern. In the image below, the LED's are glued in place and the they are connected in rows using relatively thick copper wire to handle the current.
+
+<img src="./Images/LED_soldering.jpg" width="500">
+
+The columns are soldered together using thinner wire and raised above the row connections. Lastly, the rows are connected in pairs to create the 16x64 structure instead of 32x32.
+
+All the circuit boards containing the Atmega328p and shift registers, are mounted on the solder side of this sheet, raised using standoffs (insulated with heat shrink to prevent short circuits of the underlying wires). These circuit boards all receive a power line from the processor board and the signal lines are chained through the shift registers as shown below.
+
+<img src="./Images/Internal_circuitry.jpg" width="500">
+
+The side panels are glued onto the central sheet. The right panel has a hole for the control panel which is made from a sheet of brass. Some 3d printed corner pieces allow for a clear acrylic sheet to be used as back plate. A clear acrylic sheet was chosen such that the internal circuitry is still visible.
+
+To create a grid like pattern on the screen, a grid was 3d printed and inserted between the LED's.
+
+<img src="./Images/LED_grid.jpg" width="500">
+
+A diffusive acrylic plate is used as the front plate to create a pixel look.
+
+<img src="./Images/Side_view.jpg" width="500">
+
+<img src="./Images/LEDM1024_turned_on.jpg" width="500">
+
+I'm sorry for the picture quality, but it is very difficult to capture the screen on camera. In reality the pixels are perfectly square.
+
+
 ## Electronics
 
 ### Processor
@@ -59,30 +88,3 @@ Using this button multiplexing, only six signal cables are needed to connect the
 Instead of manually editing an array of 128 bytes to create images, a python program was written to make life easier. The program uses Tkinter to create a simple UI. The program displays a grid of 32x32 cells which can be turned on/off individually by clicking on them. Other buttons allow the content of the display to be moved around, cleared, and exported into an array of 64 doubles which can be copied into the images.h file of the Arduino code.
 
 <img src="./Images/UI_screenshot.png" width="500">
-
-
-## Design
-
-The casing is built around plywood sheet where all the LED's are mounted into. This sheet has a grid of 32x32 holes drilled and all the LED's are gluid in place. The LED leads are soldered to rails of copper wire to connect them in a grid like pattern. In the image below, the LED's are glued in place and the they are connected in rows using relatively thick copper wire to handle the current.
-
-<img src="./Images/LED_soldering.jpg" width="500">
-
-The columns are soldered together using thinner wire and raised above the row connections. Lastly, the rows are connected in pairs to create the 16x64 structure instead of 32x32.
-
-All the circuit boards containing the Atmega328p and shift registers, are mounted on the solder side of this sheet, raised using standoffs (insulated with heat shrink to prevent short circuits of the underlying wires). These circuit boards all receive a power line from the processor board and the signal lines are chained through the shift registers as shown below.
-
-<img src="./Images/Internal_circuitry.jpg" width="500">
-
-The side panels are glued onto the central sheet. The right panel has a hole for the control panel which is made from a sheet of brass. Some 3d printed corner pieces allow for a clear acrylic sheet to be used as back plate. A clear acrylic sheet was chosen such that the internal circuitry is still visible.
-
-To create a grid like pattern on the screen, a grid was 3d printed and inserted between the LED's.
-
-<img src="./Images/LED_grid.jpg" width="500">
-
-A diffusive acrylic plate is used as the front plate to create a pixel look.
-
-<img src="./Images/Side_view.jpg" width="500">
-
-<img src="./Images/LEDM1024_turned_on.jpg" width="500">
-
-I'm sorry for the picture quality, but it is very difficult to capture the screen on camera. In reality the pixels are perfectly square.

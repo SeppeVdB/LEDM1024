@@ -63,7 +63,12 @@ Instead of manually editing an array of 128 bytes to create images, a python pro
 
 ## Design
 
-The casing is built around plywood sheet where all the LED's are mounted into. This sheet has a grid of 32x32 holes drilled and all the LED's are gluid in place. The LED leads are soldered to rails of copper wire to connect them in a grid like pattern. In the image below, the LED's are glued in place and the they are connected in rows using relatively thick copper wire.
+The casing is built around plywood sheet where all the LED's are mounted into. This sheet has a grid of 32x32 holes drilled and all the LED's are gluid in place. The LED leads are soldered to rails of copper wire to connect them in a grid like pattern. In the image below, the LED's are glued in place and the they are connected in rows using relatively thick copper wire to handle the current.
 
 <img src="./Images/LED_soldering.jpg" width="500">
 
+The columns are soldered together using thinner wire and raised above the row connections. Lastly, the rows are connected in pairs to create the 16x64 structure instead of 32x32.
+
+All the circuit boards containing the Atmega328p and shift registers, are mounted on the solder side of this sheet, raised using standoffs (insulated with heat shrink to prevent short circuits of the underlying wires). These circuit boards all receive a power line from the processor board and the signal lines are chained through the shift registers as shown below.
+
+<img src="./Images/Internal_circuitry.jpg" width="500">

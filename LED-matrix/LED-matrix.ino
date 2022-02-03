@@ -741,14 +741,22 @@ void pong(){
     ball_prev[0] = 15.0; ball_prev[1] = 19.0;
     ball_byte[0] = 15; ball_byte[1] = 19;
     
-    while(ball_byte[0] > 0 && ball_byte[0] < 31 && play){
+    while(ball_byte[0] > 0 and ball_byte[0] < 31 and play and !game_over){
       buttonRead();
       switch(whichButton()){
         case 'O':
           play = false;
           break;
+        case 'S':
+          game_over = true;
+          break;
         case 'T':
           pauseScreen();
+          if (paddles[0] == 0b00011001 and
+              paddles[1] == 0b00011001 and
+              scores[0] == 0b00000001 and
+              scores[1] == 0b00000001 and
+              pot_value > 0b11111010) easter_egg();
           break;
       }
       if(!controllerCheck()){
@@ -780,20 +788,23 @@ void pong(){
     paddles[0] = 17; paddles[1] = 17;
     pong_draw();
 
-    if(scores[0] == 3 || scores[1] == 3){
-      for(n=0; n<4; n++){   // blink winning score
-        if(scores[0] == 3) displayDigit(10, 1, 1);
-        else displayDigit(10, 1, 28);
-        delay(250);
-        if(scores[0] == 3) displayDigit(3, 1, 1);
-        else displayDigit(3, 1, 28);
-        delay(250);
-        buttonRead();
-        if(buttonCheck('O')){
-          play = false;
-          break;
+    if(scores[0] == 3 || scores[1] == 3 || game_over){
+      if (!game_over){
+        for(n=0; n<4; n++){   // blink winning score
+          if(scores[0] == 3) displayDigit(10, 1, 1);
+          else displayDigit(10, 1, 28);
+          delay(250);
+          if(scores[0] == 3) displayDigit(3, 1, 1);
+          else displayDigit(3, 1, 28);
+          delay(250);
+          buttonRead();
+          if(buttonCheck('O')){
+            play = false;
+            break;
+          }
         }
       }
+      game_over = false;
       if(play) pong();
     }
   }
@@ -819,4 +830,16 @@ void pong_draw(){
 void pong_next_ball_pos(){
   ball[0] = ball_prev[0]+0.5*cos(angle)*(forward*2-1);
   ball[1] = ball_prev[1]+0.5*sin(angle)*(upward*2-1);
+}
+
+void easter_egg(){
+  displayFile(ee4);
+  delay(500);
+  scroll(ee1, 'R', 30);
+  scroll(ee2, 'R', 30);
+  scroll(ee3, 'R', 30);
+  scroll(ee4, 'R', 30);
+  delay(500);
+  game_over = true;
+  play = false;
 }

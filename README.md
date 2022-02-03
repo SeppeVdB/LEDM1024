@@ -2,7 +2,7 @@
 
 The LEDM1024 is a 32x32 LED screen made from scratch using an Atmega328p as the processor.
 
-<img src="./Images/LEDM1024.jpg" width="700">
+<img src="./Images/LEDM1024.jpg" width="500">
 
 ## Applications
 

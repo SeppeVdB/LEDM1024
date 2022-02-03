@@ -2,6 +2,8 @@
 
 The LEDM1024 is a 32x32 LED screen made from scratch using an Atmega328p as the processor.
 
+<img src="./Images/LEDM1024.jpg" width="700">
+
 ## Applications
 
 The available applications are John Conway's Game of Life, Snake and Pong.

@@ -72,3 +72,11 @@ The columns are soldered together using thinner wire and raised above the row co
 All the circuit boards containing the Atmega328p and shift registers, are mounted on the solder side of this sheet, raised using standoffs (insulated with heat shrink to prevent short circuits of the underlying wires). These circuit boards all receive a power line from the processor board and the signal lines are chained through the shift registers as shown below.
 
 <img src="./Images/Internal_circuitry.jpg" width="500">
+
+The side panels are glued onto the central sheet. The right panel has a hole for the control panel which is made from a sheet of brass. Some 3d printed corner pieces allow for a clear acrylic sheet to be used as back plate. A clear acrylic sheet was chosen such that the internal circuitry is still visible.
+
+To create a grid like pattern on the screen, a grid was 3d printed and inserted between the LED's.
+
+<img src="./Images/LED_grid.jpg" width="500">
+
+A diffusive acrylic plate is used as the front plate to create a pixel look.
